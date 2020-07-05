@@ -5,6 +5,7 @@ use EasyRdf_Graph;
 use EasyRdf_Resource;
 use EasyRdf_Namespace;
 use EasyRdf_Literal;
+use ML\JsonLD\JsonLD;
 use Requests;
 
 // Form input processing
@@ -54,17 +55,30 @@ function make_payload($form_request){
     $tags = make_tags($form_request["tags"]);
     $content = trim($form_request["content"]);
 
-    if(!empty($content)){
+    $errors = array();
+    if(empty($content) || $content == "" || $content == " "){
+        $errors["content"] = "empty value not allowed";
+    }
+
+    if(empty($errors)){
         $node = $g->newBNode();
         $g->addType($node, "as:Activity");
         $g->addType($node, "asext:Consume");
         $g->addLiteral($node, "as:published", $published_date);
         $g->addLiteral($node, "as:content", $content);
+        $g->addResource($node, "as:generator", "https://apps.rhiaro.co.uk/replicator");
         foreach($tags as $tag){
             $g->addResource($node, "as:tag", $tag);
         }
+
+        // echo $g->dump();
+        $jsonld = $g->serialise("jsonld");
+        $compacted = JsonLD::compact($jsonld, $context, $options);
+        return JsonLD::toString($compacted, true);
+
+    }else{
+        return $errors;
     }
-    echo $g->dump();
 }
 
 // Posting

@@ -39,7 +39,8 @@
 
       <?if(isset($errors)):?>
         <div class="fail">
-          <?foreach($errors as $key=>$error):?>
+          <p><strong><?=$errors["errno"]?> error</strong></p>
+          <?foreach($errors["errors"] as $key=>$error):?>
             <p><strong><?=$key?>: </strong><?=$error?></p>
           <?endforeach?>
         </div>

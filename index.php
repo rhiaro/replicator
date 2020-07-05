@@ -7,16 +7,18 @@ $tz = Rhiaro\get_timezone_from_rdf("https://rhiaro.co.uk/tz");
 date_default_timezone_set($tz);
 
 $tags = array(
-    "coffee" => "https://rhiaro.co.uk/tags/coffee",
+    "beans" => "https://rhiaro.co.uk/tags/beans",
     "bread" => "https://rhiaro.co.uk/tags/bread",
-    "vegetables" => "https://rhiaro.co.uk/tags/vegetables",
-    "rice" => "https://rhiaro.co.uk/tags/rice",
+    "cake" => "https://rhiaro.co.uk/tags/cake",
+    "coffee" => "https://rhiaro.co.uk/tags/coffee",
+    "lentils" => "https://rhiaro.co.uk/tags/lentils",
     "pasta" => "https://rhiaro.co.uk/tags/pasta",
     "potato" => "https://rhiaro.co.uk/tags/potato",
-    "cake" => "https://rhiaro.co.uk/tags/cake",
+    "rice" => "https://rhiaro.co.uk/tags/rice",
+    "salad" => "https://rhiaro.co.uk/tags/salad",
+    "sandwich" => "https://rhiaro.co.uk/tags/sandwich",
     "tea" => "https://rhiaro.co.uk/tags/tea",
-    "lentils" => "https://rhiaro.co.uk/tags/lentils",
-    "beans" => "https://rhiaro.co.uk/tags/beans",
+    "vegetables" => "https://rhiaro.co.uk/tags/vegetables",
 );
 
 if(isset($_POST['replicated'])){
