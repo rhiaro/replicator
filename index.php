@@ -11,6 +11,7 @@ $tags = array(
     "bread" => "https://rhiaro.co.uk/tags/bread",
     "cake" => "https://rhiaro.co.uk/tags/cake",
     "coffee" => "https://rhiaro.co.uk/tags/coffee",
+    "fruit" => "https://rhiaro.co.uk/tags/fruit",
     "lentils" => "https://rhiaro.co.uk/tags/lentils",
     "pasta" => "https://rhiaro.co.uk/tags/pasta",
     "potato" => "https://rhiaro.co.uk/tags/potato",

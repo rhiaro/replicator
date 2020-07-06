@@ -144,9 +144,9 @@
       </div>
     </main>
     <footer class="w1of2 center">
-      <p><a href="https://github.com/rhiaro/burrow">Code</a> | <a href="https://github.com/rhiaro/burrow/issues">Issues</a>
+      <p><a href="https://github.com/rhiaro/replicator">Code</a> | <a href="https://github.com/rhiaro/replicator/issues">Issues</a>
       <?if(isset($_SESSION['access_token'])):?>
-        | <a href="https://apps.rhiaro.co.uk/burrow?token=<?=$_SESSION['access_token']?>">Quicklink</a>
+        | <a href="https://apps.rhiaro.co.uk/replicator?token=<?=$_SESSION['access_token']?>">Quicklink</a>
       <?endif?>
       </p>
     </footer>
