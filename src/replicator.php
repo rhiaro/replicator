@@ -92,7 +92,11 @@ function form_to_endpoint($form_request){
         return array("errno" => count($payload), "errors" => $payload);
     }else{
         $response = post_to_endpoint($endpoint, $key, $payload);
-        return $response;
+        if($response->status_code == "201"){
+            return $response;
+        }else{
+            return array("errno" => 1, "errors" => array("status_code" => $response->status_code, "raw" => htmlentities($response->raw)));
+        }
     }
 }
 

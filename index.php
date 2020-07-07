@@ -32,6 +32,8 @@ if(isset($_POST['replicated'])){
     if(is_array($result)){
         $errors = $result;
         unset($result);
+    }else{
+        unset($_POST);
     }
 }
 include('templates/index.php');
