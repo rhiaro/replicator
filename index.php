@@ -1,9 +1,9 @@
 <?
 session_start();
 require 'vendor/autoload.php';
-$ns = Rhiaro\ns();
+$ns = rhiaro\ERH\ns();
 
-$tz = Rhiaro\get_timezone_from_rdf("https://rhiaro.co.uk/tz");
+$tz = rhiaro\ERH\get_timezone_from_rdf("https://rhiaro.co.uk/tz");
 date_default_timezone_set($tz);
 
 $tags = array(
